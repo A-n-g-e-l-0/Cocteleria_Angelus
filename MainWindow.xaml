@@ -1,0 +1,85 @@
+﻿<Window x:Class="Cockteles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cockteles"
+        mc:Ignorable="d"
+         Title="Welcome to Cocktel Angelus" Height="697" Width="1000" 
+        MaxHeight="1200" MaxWidth="1800" MinHeight="700" MinWidth="1100" 
+        FontFamily="Calibri" FontWeight="Bold" 
+        FontSize="12" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Window.Background>
+        <ImageBrush ImageSource="/Cockteles;component/imagen/red.jpg"></ImageBrush>
+    </Window.Background>
+
+    <Grid Margin="10,0,10,12">
+
+
+        <GroupBox Header="Searcher" Height="629" HorizontalAlignment="Left" 
+                  Margin="20,0,0,0" Name="gB_Cockteles" VerticalAlignment="Center" 
+                  Width="304" 
+                  FontWeight="Bold" FontSize="15"
+                  BorderBrush="#FF2344F8" Foreground="#FFFFE8E8">
+
+            <Grid HorizontalAlignment="Left" Width="291">
+
+                <DataGrid AutoGenerateColumns="True" DataContext="{Binding}"
+                          Height="507" HorizontalAlignment="Left" Name="dG_Bebidas"
+                          VerticalAlignment="Top"
+                          Width="278" 
+                          MouseDoubleClick="dG_Cocktel_MouseDoubleClick" 
+                          Margin="10,97,0,0" 
+                          Background="#FFF4DBDB" FontSize="11.5"/>
+
+
+                <TextBox Height="40" HorizontalAlignment="Left" 
+                         Margin="10,52,0,0" Name="tB_BuscarC"
+                         VerticalAlignment="Top" Width="278" 
+                         TextChanged="tB_BuscarC_TextChanged" FontSize="18" />
+
+                <ComboBox Margin="97,10,10,563"  Name="cbBebidas"
+                           IsEditable="True"
+                          
+                          SelectionChanged="ComboBox_SelectionChanged_Bebidas" 
+                          />
+
+            </Grid>
+
+        </GroupBox>
+
+
+
+        <GroupBox Header="Details " Height="629" Margin="329,0,0,0"
+                  Name="gB_Indicadores" VerticalAlignment="Center" 
+                  FontSize="15" FontWeight="Bold" BorderBrush="#FF2344F8" 
+                  Foreground="#FFF5D9C6" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="645">
+
+            <Grid HorizontalAlignment="Left" Width="706" Margin="-281,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="154*"/>
+                    <ColumnDefinition Width="26*"/>
+                    <ColumnDefinition Width="173*"/>
+                </Grid.ColumnDefinitions>
+                <Label Height="433" Margin="10,140,-60,0" 
+               Name="lb_IndicadorBebidas" 
+               IsEnabled="False" FontSize="12" Foreground="#FFE5EFFF" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" >
+
+                </Label>
+                <Image Name="imgDynamic" Margin="238,6,-195,313" Grid.Column="2"/>
+
+            </Grid>
+
+
+        </GroupBox>
+
+
+
+    </Grid>
+
+
+
+
+
+
+</Window>
